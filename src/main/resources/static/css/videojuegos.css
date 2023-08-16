@@ -1,0 +1,10 @@
+.vj-destacados .card {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.vj-destacados .card img {
+    height: 160px;
+    object-fit: cover;
+    border-top: 20px;
+}

@@ -6,32 +6,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/6b2998336f.js" crossorigin="anonymous"></script>
-
-        <title>Tienda de Javier!</title>
+        <link rel="stylesheet" href="css/videojuegos.css">
+        <title>videojuegos 🕹️</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-secondary bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand fw-bolder text-uppercase" href="#">Video Games<li class="ms-2 fas fa-gamepad"></li> </a>
             </div>
         </nav>
-        <div class="container-fluid mt-4">
+        <div class="container-fluid mt-4 vj-destacados">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="holder.js/100x180/" alt="Title">
+                <div th:each="juego : ${videojuegos}" class="col-md-3 mb-4">
+                    <div class="card shadow-sm">
+                        <img th:src="${juego.imagenUrl}" class="card-img-top" alt="Title">
                         <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <p class="card-text">Text</p>
-                            <a href="/" class="btn button-primary">Go&nbsp;<li class="fas fa-door-open"></li></a>
+                            <h4 th:text="${juego.nombre}" class="card-title"></h4>
+                            <p th:text="${juego.descripcion}" class="card-text"></p>                                
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/" class="btn">Ver Detalles&nbsp;<li class="ms-2 fas fa-eye"></li></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

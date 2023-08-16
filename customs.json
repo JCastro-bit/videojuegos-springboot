@@ -1,0 +1,13 @@
+{
+    "elements": {
+        "li": {}
+    },
+    "attributes": {
+        "th:text": {},
+        "th:src\"${juego.imagenurl}\"": {},
+        "th:src": {
+            "context": "img"
+        },
+        "th:each": {}
+    }
+}
