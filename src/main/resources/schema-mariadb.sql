@@ -1,5 +1,6 @@
 -- Si la tabla ya existe la eliminamos
 DROP TABLE if exist videojuego;
+DROP TABLE if exist distribuidor;
 
 -- Script para crear la tabla
 CREATE TABLE videojuego (
@@ -23,3 +24,22 @@ INSERT INTO videojuego
 ('Cyberpunk 2077',              'Situado en la metrópolis futurista de Night City, los jugadores asumen el papel de V, un mercenario en busca de un implante único que es la clave para la inmortalidad. El juego es un RPG de mundo abierto con múltiples líneas argumentales.',       'https://cdn.dribbble.com/users/1410611/screenshots/14785824/media/1e09746ac8169efde8f3aa02fbef2722.jpg'),
 ('Ghost of Tsushima',           'En el final del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar el Este. La isla de Tsushima es todo lo que queda entre el Japón continental y un gigantesco flota de invasión mongola.',                      'https://cdn.dribbble.com/userupload/3167937/file/still-89f850e065cdeae5bd661d99382ff127.png');
 
+
+CREATE TABLE distribuidor (
+    id int primary key auto_increment,
+    nombre varchar(200) not null,
+    sitio_web varchar (500)
+); 
+
+
+INSERT INTO distribuidor (nombre, sitio_web) VALUES
+('Nintendo', 'https://www.nintendo.com/'),                   -- Zelda Tears of the Kingdom
+('CD Projekt', 'https://www.cdprojekt.com/'),                -- The Witcher 3
+('Crystal Dynamics', 'https://www.crystald.com/'),           -- Rise of Tomb Rider
+('Square Enix', 'https://www.square-enix.com/'),             -- Final Fantasy XV
+('Rockstar Games', 'https://www.rockstargames.com/'),        -- Red Dead Redemption 2
+('Ubisoft', 'https://www.ubisoft.com/'),                     -- Assassin's Creed Valhalla
+('Santa Monica Studio', 'https://sms.playstation.com/'),     -- God of War
+('343 Industries', 'https://www.343industries.com/'),        -- Halo Infinite
+('CD Projekt Red', 'https://www.cdprojektred.com/'),         -- Cyberpunk 2077
+('Sucker Punch Productions', 'https://www.suckerpunch.com/');-- Ghost of Tsushima

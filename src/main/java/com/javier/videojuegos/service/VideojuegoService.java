@@ -17,6 +17,10 @@ public class VideojuegoService {
 
     // Tenemos la firma de nuestro metodo BuscarDestacados que devulve una lista de juegos
     public List<Videojuego> buscarDestacados() {
-        return videojuegoRepository.findAll(); // Este Find All va a la base  de datos y hace un SELECT * FROM
+        return videojuegoRepository.buscarTodos(); // Este Find All va a la base  de datos y hace un SELECT * FROM
+    }
+    
+    public List<Videojuego> buscarPorDistribuidor (int distribuirdorId) {
+        return videojuegoRepository.buscarPorDistribuidor(distribuirdorId);
     }
 }

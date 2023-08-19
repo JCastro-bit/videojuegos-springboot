@@ -1,6 +1,12 @@
 {
     "elements": {
-        "li": {}
+        "div": {},
+        "small": {},
+        "a": {},
+        "img": {},
+        "i": {},
+        "li": {},
+        "h6": {}
     },
     "attributes": {
         "th:text": {},
