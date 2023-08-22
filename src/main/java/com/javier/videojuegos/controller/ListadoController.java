@@ -12,22 +12,27 @@ public class ListadoController {
 
     private final VideojuegoService videojuegoService;
 
-    public ListadoController(VideojuegoService videojuegoService) {        
+    public ListadoController(VideojuegoService videojuegoService) {
         this.videojuegoService = videojuegoService;
     }
-        
+
     @RequestMapping("/")
-    public String listarVideojuegos (Model model){  
-        
+    public String listarVideojuegos(Model model) {
+
         // Invocamos nuestro Servicio
         List<Videojuego> destacados = videojuegoService.buscarDestacados();
-        
+
         // Busqueda de los videojuegos
-        model.addAttribute("videojuegos",destacados);
-        
-        return"listado";
+        model.addAttribute("videojuegos", destacados);
+
+        return "listado";
     }
-    
-    
+
+    @RequestMapping("/videojuegoPorDistribuidor")
+    public String listarVideojuegosPorDistribuidor(int distribuidorId, Model model) {
+        List<Videojuego> juegos = videojuegoService.buscarPorDistribuidor(distribuidorId);
+        model.addAttribute("videojuegos", juegos);
+        return "listado";
+    }
+
 }
- 
