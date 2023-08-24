@@ -16,4 +16,9 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Integer>
     // Cuando omitimos el "Select" es porque traemos el objeto completo
     @Query("from Videojuego v where v.distribuidor.id = ?1 order by v.nombre")
     List<Videojuego>buscarPorDistribuidor(int distribuidorId);
+    
+    // Esta consulta hará un match con un string similar al insertado
+    // @Query("from Videojuego v where v.nombre like %?1%")
+    List<Videojuego>findByNombreContaining(String consulta);
+    
 }

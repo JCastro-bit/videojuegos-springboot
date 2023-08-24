@@ -40,9 +40,16 @@
     <body>
         <main class="bg-dark text-white">
             <nav class="navbar navbar-expand-lg navbar-secondary bg-transparent sticky-top vj-navbar">
+                <form class="d-flex ms-1 justify-content-start">
+                    <a class="btn btn-outline-light rounded-pill bg-transparent  link-body-emphasis text-decoration-none" th:href="@{/videojuegos/crear}">Administrar</a>
+                </form>
                 <div class="container-fluid d-flex justify-content-center">
                     <a class="navbar-brand fw-bolder text-uppercase" href="/">Video Games<li class="ms-2 fas fa-gamepad"></li></a>
                 </div>
+                <form th:action="@{/buscar}" class="d-flex text-white me-2" role="search">
+                    <input autofocus="autofocus" name="q" class="form-control me-2 bg-transparent text-white rounded-pill" type="search" th:placeholder="${param.q}" aria-label="Search">
+                    <button class="btn btn-outline-light rounded-pill" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </nav>
             <div class="container-fluid mt-4 p-4 vj-destacados">
                 <div class="row">
