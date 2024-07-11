@@ -43,3 +43,9 @@ INSERT INTO distribuidor (nombre, sitio_web) VALUES
 ('343 Industries', 'https://www.343industries.com/'),        -- Halo Infinite
 ('CD Projekt Red', 'https://www.cdprojektred.com/'),         -- Cyberpunk 2077
 ('Sucker Punch Productions', 'https://www.suckerpunch.com/');-- Ghost of Tsushima
+
+
+
+ALTER TABLE videojuego
+ADD COLUMN distribuidor_id INT,
+ADD FOREIGN KEY (distribuidor_id) REFERENCES distribuidor(id);
